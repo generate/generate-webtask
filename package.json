@@ -24,6 +24,8 @@
     "webtask"
   ],
   "dependencies": {
-    "is-valid-app": "^0.2.0"
+    "generate-defaults": "^0.6.0",
+    "is-valid-app": "^0.2.0",
+    "through2": "^2.0.1"
   }
 }
