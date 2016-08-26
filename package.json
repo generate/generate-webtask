@@ -1,0 +1,29 @@
+{
+  "name": "generate-webtask",
+  "description": "Generate a project for a webtask.io webtask.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/generate/generate-webtask",
+  "author": "Brian Woodward (https://github.com/doowb)",
+  "repository": "generate/generate-webtask",
+  "bugs": {
+    "url": "https://github.com/generate/generate-webtask/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "generator.js",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "generate",
+    "webtask"
+  ],
+  "dependencies": {
+    "is-valid-app": "^0.2.0"
+  }
+}
