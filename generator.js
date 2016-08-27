@@ -1,7 +1,6 @@
 'use strict';
 
 var path = require('path');
-var through = require('through2');
 var isValid = require('is-valid-app');
 
 module.exports = function(app) {
@@ -81,12 +80,6 @@ function file(app, pattern) {
   var src = app.options.srcBase || path.join(__dirname, 'templates');
   return app.src(pattern, {cwd: src})
     .pipe(app.renderFile('*')).on('error', console.log)
-    .pipe(through.obj(function(file, enc, next) {
-      if (file.stem.indexOf('index_') === 0) {
-        file.stem = 'index';
-      }
-      next(null, file);
-    }))
     .pipe(app.conflicts(app.cwd))
     .pipe(app.dest(app.cwd));
 }

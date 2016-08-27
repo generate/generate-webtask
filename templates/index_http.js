@@ -1,3 +1,7 @@
+---
+rename:
+  basename: 'index.js'
+---
 'use strict';
 
 module.exports = function(context, req, res) {
