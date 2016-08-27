@@ -67,6 +67,62 @@ describe('generate-webtask', function() {
     it('should run the `default` task with .generate', function(cb) {
       app.generate('default', exists('index.js', cb));
     });
+
+    it('should run the `webtask` task with .build', function(cb) {
+      app.build('webtask', exists('index.js', cb));
+    });
+
+    it('should run the `webtask` task with .generate', function(cb) {
+      app.generate('webtask', exists('index.js', cb));
+    });
+
+    it('should run the `webtask-simple` task with .build', function(cb) {
+      app.build('webtask-simple', exists('index.js', cb));
+    });
+
+    it('should run the `webtask-simple` task with .generate', function(cb) {
+      app.generate('webtask-simple', exists('index.js', cb));
+    });
+
+    it('should run the `simple` task with .build', function(cb) {
+      app.build('simple', exists('index.js', cb));
+    });
+
+    it('should run the `simple` task with .generate', function(cb) {
+      app.generate('simple', exists('index.js', cb));
+    });
+
+    it('should run the `webtask-context` task with .build', function(cb) {
+      app.build('webtask-context', exists('index.js', cb));
+    });
+
+    it('should run the `webtask-context` task with .generate', function(cb) {
+      app.generate('webtask-context', exists('index.js', cb));
+    });
+
+    it('should run the `context` task with .build', function(cb) {
+      app.build('context', exists('index.js', cb));
+    });
+
+    it('should run the `context` task with .generate', function(cb) {
+      app.generate('context', exists('index.js', cb));
+    });
+
+    it('should run the `webtask-http` task with .build', function(cb) {
+      app.build('webtask-http', exists('index.js', cb));
+    });
+
+    it('should run the `webtask-http` task with .generate', function(cb) {
+      app.generate('webtask-http', exists('index.js', cb));
+    });
+
+    it('should run the `http` task with .build', function(cb) {
+      app.build('http', exists('index.js', cb));
+    });
+
+    it('should run the `http` task with .generate', function(cb) {
+      app.generate('http', exists('index.js', cb));
+    });
   });
 
   if (!process.env.CI && !process.env.TRAVIS) {
@@ -105,6 +161,36 @@ describe('generate-webtask', function() {
       app.register('webtask', generator);
       app.generate('webtask:default', exists('index.js', cb));
     });
+
+    it('should run the `webtask-simple` task', function(cb) {
+      app.register('webtask', generator);
+      app.generate('webtask:webtask-simple', exists('index.js', cb));
+    });
+
+    it('should run the `simple` task', function(cb) {
+      app.register('webtask', generator);
+      app.generate('webtask:simple', exists('index.js', cb));
+    });
+
+    it('should run the `webtask-context` task', function(cb) {
+      app.register('webtask', generator);
+      app.generate('webtask:webtask-context', exists('index.js', cb));
+    });
+
+    it('should run the `context` task', function(cb) {
+      app.register('webtask', generator);
+      app.generate('webtask:context', exists('index.js', cb));
+    });
+
+    it('should run the `webtask-http` task', function(cb) {
+      app.register('webtask', generator);
+      app.generate('webtask:webtask-http', exists('index.js', cb));
+    });
+
+    it('should run the `http` task', function(cb) {
+      app.register('webtask', generator);
+      app.generate('webtask:http', exists('index.js', cb));
+    });
   });
 
   describe('sub-generator', function() {
@@ -138,6 +224,48 @@ describe('generate-webtask', function() {
         foo.register('webtask', generator);
       });
       app.generate('foo.webtask:webtask', exists('index.js', cb));
+    });
+
+    it('should run the `webtask:webtask-simple` task', function(cb) {
+      app.register('foo', function(foo) {
+        foo.register('webtask', generator);
+      });
+      app.generate('foo.webtask:webtask-simple', exists('index.js', cb));
+    });
+
+    it('should run the `webtask:simple` task', function(cb) {
+      app.register('foo', function(foo) {
+        foo.register('webtask', generator);
+      });
+      app.generate('foo.webtask:simple', exists('index.js', cb));
+    });
+
+    it('should run the `webtask:webtask-context` task', function(cb) {
+      app.register('foo', function(foo) {
+        foo.register('webtask', generator);
+      });
+      app.generate('foo.webtask:webtask-context', exists('index.js', cb));
+    });
+
+    it('should run the `webtask:context` task', function(cb) {
+      app.register('foo', function(foo) {
+        foo.register('webtask', generator);
+      });
+      app.generate('foo.webtask:context', exists('index.js', cb));
+    });
+
+    it('should run the `webtask:webtask-http` task', function(cb) {
+      app.register('foo', function(foo) {
+        foo.register('webtask', generator);
+      });
+      app.generate('foo.webtask:webtask-http', exists('index.js', cb));
+    });
+
+    it('should run the `webtask:http` task', function(cb) {
+      app.register('foo', function(foo) {
+        foo.register('webtask', generator);
+      });
+      app.generate('foo.webtask:http', exists('index.js', cb));
     });
 
     it('should work with nested sub-generators', function(cb) {
