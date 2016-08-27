@@ -11,18 +11,17 @@
   "license": "MIT",
   "files": [
     "generator.js",
-    "LICENSE"
+    "index.js",
+    "LICENSE",
+    "templates"
   ],
+  "main": "index.js",
   "engines": {
     "node": ">=0.10.0"
   },
   "scripts": {
     "test": "mocha"
   },
-  "keywords": [
-    "generate",
-    "webtask"
-  ],
   "dependencies": {
     "generate-defaults": "^0.6.0",
     "is-valid-app": "^0.2.0",
@@ -38,6 +37,10 @@
     "verb-generate-readme": "^0.1.30",
     "verb-trees": "^0.1.0"
   },
+  "keywords": [
+    "generate",
+    "webtask"
+  ],
   "verb": {
     "toc": {
       "method": "preWrite",
