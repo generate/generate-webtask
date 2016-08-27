@@ -11,23 +11,47 @@ module.exports = function(app) {
   app.use(require('generate-defaults'));
 
   /**
-   * Generate a `index.js` file to the current working directory. Learn how to [customize
+   * Generate an `index.js` file to the current working directory with a [simple webtask function](https://webtask.io/docs/model). Learn how to [customize
    * behavior(#customization) or override built-in templates.
    *
    * ```sh
-   * $ gen webtask:webtask
+   * $ gen webtask:simple
    * ```
-   * @name webtask:webtask
+   * @name webtask:simple
    * @api public
    */
 
-  task(app, 'webtask-simple', 'index_simple.js');
-  task(app, 'webtask-context', 'index_context.js');
-  task(app, 'webtask-http', 'index_http.js');
-  app.task('webtask', ['webtask-simple']);
   app.task('simple', ['webtask-simple']);
+  app.task('webtask', ['webtask-simple']);
+  task(app, 'webtask-simple', 'index_simple.js');
+
+  /**
+   * Generate an `index.js` file to the current working directory with a [webtask function with context](https://webtask.io/docs/model). Learn how to [customize
+   * behavior(#customization) or override built-in templates.
+   *
+   * ```sh
+   * $ gen webtask:context
+   * ```
+   * @name webtask:context
+   * @api public
+   */
+
   app.task('context', ['webtask-context']);
+  task(app, 'webtask-context', 'index_context.js');
+
+  /**
+   * Generate an `index.js` file to the current working directory with a [webtask function with full HTTP control](https://webtask.io/docs/model). Learn how to [customize
+   * behavior(#customization) or override built-in templates.
+   *
+   * ```sh
+   * $ gen webtask:http
+   * ```
+   * @name webtask:http
+   * @api public
+   */
+
   app.task('http', ['webtask-http']);
+  task(app, 'webtask-http', 'index_http.js');
 
   /**
    * Alias for running the [webtask](#webtask) task with the following command:
