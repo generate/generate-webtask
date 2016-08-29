@@ -1,6 +1,6 @@
 {
   "name": "generate-webtask",
-  "description": "Generate a project for a webtask.io webtask.",
+  "description": "Generate a starting point for a webtask.io service.",
   "version": "0.1.0",
   "homepage": "https://github.com/generate/generate-webtask",
   "author": "Brian Woodward (https://github.com/doowb)",
